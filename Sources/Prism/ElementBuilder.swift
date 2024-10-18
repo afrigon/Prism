@@ -8,13 +8,22 @@ public enum ElementBuilder {
 
     // MARK: Block Builders
 
-    public static func buildBlock(_ components: PrismElement...) -> [PrismElement] {
-        components
-    }
-
+//    public static func buildBlock(_ components: PrismElement...) -> [PrismElement] {
+//        components
+//    }
+    
     @_disfavoredOverload
     public static func buildBlock(_ components: [PrismElement]...) -> [PrismElement] {
         components.flatMap { $0 }
+    }
+    
+    // MARK: Optionnal Builders
+    public static func buildOptional(_ component: [PrismElement]?) -> [any PrismElement] {
+        component ?? []
+    }
+    
+    public static func buildOptional(_ component: PrismElement?) -> [PrismElement] {
+        component.map { [$0] } ?? []
     }
 
     // MARK: Expression Builders
@@ -55,5 +64,9 @@ public enum ElementBuilder {
     @_disfavoredOverload
     public static func buildEither(second components: [PrismElement]...) -> [PrismElement] {
         components.flatMap { $0 }
+    }
+    
+    public static func buildOptional(_ component: [PrismElement]?) -> [PrismElement] {
+        component ?? []
     }
 }
