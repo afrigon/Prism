@@ -8,14 +8,6 @@ public enum ElementBuilder {
 
     // MARK: Block Builders
 
-    public static func buildBlock(_ components: PrismElement...) -> [PrismElement] {
-        components
-    }
-    
-    public static func buildBlock(_ components: [PrismElement]...) -> [PrismElement] {
-        components.flatMap { $0 }
-    }
-    
     public static func buildPartialBlock(first: [any PrismElement]) -> [any PrismElement] {
         first
     }
