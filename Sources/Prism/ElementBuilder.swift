@@ -12,6 +12,10 @@ public enum ElementBuilder {
         components
     }
     
+    public static func buildBlock(_ components: [PrismElement]...) -> [PrismElement] {
+        components.flatMap { $0 }
+    }
+
     public static func buildBlock(_ components: PrismElementConvertible...) -> [PrismElement] {
         components.map(\.prismElement)
     }
