@@ -16,6 +16,14 @@ public enum ElementBuilder {
         components.flatMap { $0 }
     }
     
+    public static func buildPartialBlock(first: [any PrismElement]) -> [any PrismElement] {
+        first
+    }
+    
+    public static func buildPartialBlock(accumulated: [any PrismElement], next: [any PrismElement]) -> [any PrismElement] {
+        accumulated + next
+    }
+    
     // MARK: Expression Builders
 
     public static func buildExpression(_ expression: PrismElement) -> PrismElement {
