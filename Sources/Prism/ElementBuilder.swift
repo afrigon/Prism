@@ -18,16 +18,8 @@ public enum ElementBuilder {
     
     // MARK: Expression Builders
 
-    public static func buildExpression(_ expression: PrismElement) -> PrismElement {
-        expression
-    }
-
     public static func buildExpression(_ expression: PrismElementConvertible) -> PrismElement {
         expression.prismElement
-    }
-
-    public static func buildExpression(_ expression: [PrismElement]) -> [PrismElement] {
-        expression
     }
 
     public static func buildExpression(_ expression: [PrismElementConvertible]) -> [PrismElement] {
