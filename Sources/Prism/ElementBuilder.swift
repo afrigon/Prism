@@ -7,6 +7,14 @@
 public enum ElementBuilder {
 
     // MARK: Block Builders
+    
+    static func buildBlock(_ components: PrismElement...) -> [PrismElement] {
+        components
+    }
+    
+    static func buildBlock(_ components: PrismElementConvertible...) -> [PrismElement] {
+        components.map(\.prismElement)
+    }
 
     public static func buildPartialBlock(first: PrismElement) -> PrismElement {
         first
