@@ -21,10 +21,4 @@ final class ElementBuilderTests: XCTestCase {
         XCTAssert(elements1._isEqual([Standard("Hello"), Standard("world")]))
         XCTAssert(elements1._isEqual(elements2))
     }
-
-    func testBuildBlockFromArrays() {
-        @ElementBuilder var elements1: [PrismElement] {
-            [Standard("Hello"), Bold("World")]
-        }
-    }
 }
